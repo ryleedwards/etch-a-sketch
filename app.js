@@ -25,6 +25,7 @@ function createSquares() {
       square.setAttribute("class", "square");
       square.style.height = height / dimension + "px";
       square.style.width = width / dimension + "px";
+      addSquareListener(square);
       row.appendChild(square);
     }
     row.setAttribute("class", "row");
@@ -49,4 +50,10 @@ function promptUser() {
     newDimensions = parseInt(prompt("Dimensions cannot exceed 100", "64"));
   }
   return newDimensions;
+}
+
+function addSquareListener(element) {
+  element.addEventListener("mouseover", () => {
+    element.style.backgroundColor = "black";
+  });
 }
